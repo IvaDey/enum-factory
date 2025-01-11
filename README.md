@@ -11,6 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 ![Open Issues](https://img.shields.io/github/issues/IvaDey/enum-factory)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
+![Coverage](https://img.shields.io/codecov/c/github/IvaDey/enum-factory)
 
 </div>
 
