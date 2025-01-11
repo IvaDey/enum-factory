@@ -9,7 +9,7 @@
 ![Version](https://img.shields.io/npm/v/@ivadey/enum-factory)
 ![TypeScript](https://img.shields.io/npm/types/@ivadey/enum-factory)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-![Open Issues](https://img.shields.io/github/issues/IvaDey/enum-factory)
+[![Open Issues](https://img.shields.io/github/issues/IvaDey/enum-factory)](https://github.com/IvaDey/enum-factory/issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 ![Coverage](https://img.shields.io/codecov/c/github/IvaDey/enum-factory)
 
