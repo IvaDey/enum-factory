@@ -1,0 +1,44 @@
+{
+  "name": "@ivadey/enum-factory",
+  "version": "1.0.0",
+  "description": "A powerful factory for creating extensible and type-safe enums in TypeScript, offering enhanced flexibility and features compared to native enums.",
+  "keywords": [
+    "enum",
+    "factory",
+    "typescript",
+    "type-safe",
+    "extensible",
+    "class-based",
+    "enumeration",
+    "javascript",
+    "ts",
+    "utility",
+    "typed-enum",
+    "enum-factory"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "tsc --noEmit && eslint --ext .ts,.tsx .",
+    "lint": "eslint --ext .ts,.tsx .",
+    "test": "vitest --typecheck run",
+    "prepare": "husky"
+  },
+  "author": "Valentin Ivanenco",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-deprecation": "^3.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}

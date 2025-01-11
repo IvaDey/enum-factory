@@ -1,0 +1,6 @@
+{
+  "prepareRelease": {
+    "commandBeforeCommit": "",
+    "commitLinkTemplate": "{{hash}}"
+  }
+}
