@@ -22,7 +22,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "vitest.config.ts"],
+  "include": ["src", "vitest.config.ts", "commitlint.config.ts"],
   "exclude": [
     "node_modules"
   ]

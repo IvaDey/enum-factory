@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { RuleConfigSeverity, type UserConfig } from '@commitlint/types';
 
 export default {

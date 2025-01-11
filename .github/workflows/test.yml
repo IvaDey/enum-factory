@@ -1,0 +1,48 @@
+name: Test and publish
+
+on:
+  push:
+    branches:
+      - v1.0
+  pull_request:
+    branches:
+      - v1.0
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check types and eslint
+        run: npm run check
+
+      - name: Run tests
+        run: npm test
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+#      - name: Bump version
+#        run: nn
+#
+#      - name: Build package
+#        run: npm build
+#
+#      - name: Publish to the NPM registry
+#        run: npm publish
+#
+#      - name: Push new version
+#        run: nn
