@@ -4,7 +4,7 @@ import {
   expectTypeOf,
   it,
 } from 'vitest';
-import EnumFactory, { EnumType } from './index';
+import EnumFactory, { EnumKeysType, EnumType } from './index';
 
 const StringEnum = EnumFactory.create('string-enum', { Foo: 'bar' });
 type StringEnum = EnumType<typeof StringEnum>;
@@ -102,5 +102,19 @@ describe('Type definitions', () => {
     assertType<Array<['Foo' | 'Child', ChildEnum]>>(ChildEnum.entries());
 
     expectTypeOf(StringEnum.keys()).not.toMatchTypeOf<Array<'foo'>>();
+  });
+
+  it('should be able to use enum in types as index signature', () => {
+    type SKeys = EnumKeysType<typeof StringEnum>;
+    type CKeys = EnumKeysType<typeof ChildEnum>;
+
+    expectTypeOf<SKeys>().toMatchTypeOf<'Foo'>();
+    expectTypeOf<CKeys>().toMatchTypeOf<'Foo' | 'Child'>();
+    expectTypeOf<CKeys>().not.toMatchTypeOf<'Bar'>();
+
+    expectTypeOf({ Foo: '', Child: '' }).toMatchTypeOf<{ [key in CKeys]: string; }>();
+    expectTypeOf({ Foo: '' }).toMatchTypeOf<{ [key in CKeys]?: string; }>();
+    expectTypeOf({ Foo: '' }).not.toMatchTypeOf<{ [key in CKeys]: string; }>();
+    expectTypeOf<{ [key in CKeys]?: string; }>().not.toMatchTypeOf({ Foo: '', Child: '', Bar: '' });
   });
 });
