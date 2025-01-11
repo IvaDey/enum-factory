@@ -2,20 +2,20 @@
 // @ts-nocheck
 /* eslint-disable eqeqeq */
 import { describe, expect, it } from 'vitest';
-import EnumFactory from './index';
+import EnumFactory, { EnumKeysType } from './index';
 
 const Enum1 = EnumFactory.create('enum1', {
   Foo: 'bar',
   Number: 12,
-});
+} as const);
 
 const Enum2 = EnumFactory.create('enum2', {
   Foo: 'bar',
-});
+} as const);
 
 const Enum3 = Enum2.cloneAndExtend('child-enum', {
   Number: 12,
-});
+} as const);
 
 describe('Functionality', () => {
   it('should be equal with primitives on non-strict comparison and not equal in other cases', () => {
@@ -39,6 +39,7 @@ describe('Functionality', () => {
 
   it('should return enum instance or undefined for unknown value after fromValue()', () => {
     expect(Enum1.fromValue('bar')).toStrictEqual(Enum1.Foo);
+    // @ts-expect-error as it should be tested
     expect(Enum1.fromValue('unknown')).toBeUndefined();
   });
 
@@ -95,5 +96,16 @@ describe('Functionality', () => {
 
     expect(JSON.stringify(source)).toStrictEqual(JSON.stringify(res));
     expect(JSON.parse(JSON.stringify(source))).toStrictEqual(res);
+  });
+
+  it('should be able to use enum in types as index signature', () => {
+    const enumObj: { [key in EnumKeysType<typeof Enum1>]?: string } = {
+      [Enum1.Foo]: 'foo',
+      [Enum1.Number]: 'number',
+    };
+    expect(enumObj).toStrictEqual({
+      bar: 'foo',
+      12: 'number',
+    });
   });
 });
