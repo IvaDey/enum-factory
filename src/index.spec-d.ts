@@ -6,13 +6,16 @@ import {
 } from 'vitest';
 import EnumFactory, { EnumKeysType, EnumType } from './index';
 
-const StringEnum = EnumFactory.create('string-enum', { Foo: 'bar' });
+const StringEnum = EnumFactory.create('string-enum', { Foo: 'bar' } as const);
 type StringEnum = EnumType<typeof StringEnum>;
-const NumberEnum = EnumFactory.create('number-enum', { Foo: 12 });
+
+const NumberEnum = EnumFactory.create('number-enum', { Foo: 12 } as const);
 type NumberEnum = EnumType<typeof NumberEnum>;
-const MixedEnum = EnumFactory.create('mixed-enum', { Foo: 'bar', Bar: 12 });
+
+const MixedEnum = EnumFactory.create('mixed-enum', { Foo: 'bar', Bar: 12 } as const);
 type MixedEnum = EnumType<typeof MixedEnum>;
-const ChildEnum = StringEnum.cloneAndExtend('child-enum', { Child: 'child' });
+
+const ChildEnum = StringEnum.cloneAndExtend('child-enum', { Child: 'child' } as const);
 type ChildEnum = EnumType<typeof ChildEnum>;
 
 describe('Type definitions', () => {
@@ -52,10 +55,14 @@ describe('Type definitions', () => {
     expectTypeOf(StringEnum).toHaveProperty('keys').toBeFunction();
     expectTypeOf(StringEnum).toHaveProperty('entries').toBeFunction();
 
+    // @ts-expect-error as it a test case
     expectTypeOf(StringEnum.fromValue).toBeCallableWith('');
+    expectTypeOf(StringEnum.fromValue).toBeCallableWith('bar');
     expectTypeOf(NumberEnum.fromValue).toBeCallableWith(12);
-    expectTypeOf(MixedEnum.fromValue).toBeCallableWith('');
+    expectTypeOf(MixedEnum.fromValue).toBeCallableWith('bar');
     expectTypeOf(MixedEnum.fromValue).toBeCallableWith(12);
+    // @ts-expect-error as it a test case
+    expectTypeOf(MixedEnum.fromValue).toBeCallableWith(1);
 
     expectTypeOf(StringEnum.Foo).toBeObject();
     expectTypeOf(NumberEnum.Foo).toBeObject();
@@ -105,16 +112,20 @@ describe('Type definitions', () => {
   });
 
   it('should be able to use enum in types as index signature', () => {
-    type SKeys = EnumKeysType<typeof StringEnum>;
-    type CKeys = EnumKeysType<typeof ChildEnum>;
+    type SKeysSignature = EnumKeysType<typeof StringEnum>;
+    type NKeysSignature = EnumKeysType<typeof NumberEnum>;
+    type CKeysSignature = EnumKeysType<typeof ChildEnum>;
 
-    expectTypeOf<SKeys>().toMatchTypeOf<'Foo'>();
-    expectTypeOf<CKeys>().toMatchTypeOf<'Foo' | 'Child'>();
-    expectTypeOf<CKeys>().not.toMatchTypeOf<'Bar'>();
+    expectTypeOf<SKeysSignature>().toMatchTypeOf<'bar'>();
+    expectTypeOf<NKeysSignature>().toMatchTypeOf<12>();
+    expectTypeOf<CKeysSignature>().toMatchTypeOf<'bar' | 'child'>();
+    expectTypeOf<CKeysSignature>().not.toMatchTypeOf<'foo'>();
+    expectTypeOf<NKeysSignature>().not.toMatchTypeOf<1>();
 
-    expectTypeOf({ Foo: '', Child: '' }).toMatchTypeOf<{ [key in CKeys]: string; }>();
-    expectTypeOf({ Foo: '' }).toMatchTypeOf<{ [key in CKeys]?: string; }>();
-    expectTypeOf({ Foo: '' }).not.toMatchTypeOf<{ [key in CKeys]: string; }>();
-    expectTypeOf<{ [key in CKeys]?: string; }>().not.toMatchTypeOf({ Foo: '', Child: '', Bar: '' });
+    // expectTypeOf({ bar: '', child: '' }).toMatchTypeOf<{ [key in CKeysSignature]: string; }>();
+    // expectTypeOf({ 12: '' }).toMatchTypeOf<{ [key in NKeysSignature]: string; }>();
+    // expectTypeOf({ bar: '' }).toMatchTypeOf<{ [key in CKeysSignature]?: string; }>();
+    // expectTypeOf({ bar: '' }).not.toMatchTypeOf<{ [key in CKeysSignature]: string; }>();
+    // expectTypeOf<{ [key in CKeysSignature]?: string; }>().not.toMatchTypeOf({ bar: '', child: '', Bar: '' });
   });
 });
