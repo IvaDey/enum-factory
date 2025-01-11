@@ -21,7 +21,7 @@
     "build": "node scripts/build.mjs",
     "check": "tsc --noEmit && eslint --ext .ts,.tsx .",
     "lint": "eslint --ext .ts,.tsx .",
-    "test": "vitest --typecheck run",
+    "test": "vitest run",
     "prepare": "husky"
   },
   "author": "Valentin Ivanenco",
