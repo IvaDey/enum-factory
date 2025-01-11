@@ -119,6 +119,11 @@ export type EnumType<TClassEnum> = TClassEnum extends ClassEnum<any, any, any>
   ? ReturnType<TClassEnum['values']>[number]
   : never;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type EnumKeysType<TClassEnum> = TClassEnum extends ClassEnum<any, any, any>
+  ? ReturnType<TClassEnum['keys']>[number]
+  : never;
+
 type EnumDefinition = {
   [key: string]: string | number;
 };
