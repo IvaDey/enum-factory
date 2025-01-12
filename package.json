@@ -2,6 +2,13 @@
   "name": "@ivadey/enum-factory",
   "version": "1.0.0",
   "description": "A powerful factory for creating extensible and type-safe enums in TypeScript, offering enhanced flexibility and features compared to native enums.",
+  "bugs": {
+    "url": "https://github.com/IvaDey/enum-factory/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IvaDey/enum-factory"
+  },
   "keywords": [
     "enum",
     "factory",
