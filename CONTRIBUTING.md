@@ -1,3 +1,59 @@
+# Contributing
+
+## Introduction
+
+First, thank you for considering contributing! It is people like you that make the open source community such a great community! 😊
+
+We welcome any type of contribution, not just code. You can help with:
+
+- **QA**: file bug reports, the more details you can give the better (e.g. screenshots with the console open)
+- **Marketing**: writing blog posts, how to's, printing stickers, ...
+- **Community**: presenting the project at meetups, organizing a dedicated meetup for the local community, ...
+- **Code**: take a look at the [open issues](https://github.com/IvaDey/enum-factory/issues). Even if you can't write code, commenting on them and showing that you care about a given issue matters. It helps us triage them.
+
+## Your First Contribution
+
+If you're new to open source, check out [How to Contribute to an Open Source Project on GitHub](https://opensource.guide/how-to-contribute/).
+
+Steps for contributing:
+1. Fork the repository and clone your fork.
+2. Create a branch for your changes:
+```shell
+git checkout -b <type>/<short-description>
+```
+Example: feat/add-color-enum.
+3. Make your changes, ensuring they pass all lint and test checks.
+4. Push your changes and open a pull request.
+
+## Submitting code
+
+### Before You Begin
+- Lint and type-check your code:
+```shell
+npm run check
+```
+- Add tests for your changes:
+  - Unit tests for logic.
+  - TypeScript tests for type validation.
+  - Place tests next to the source files.
+
+### Pull Request Guidelines
+- Ensure your pull request contains:
+  - A clear title and description:
+    - What problem does this solve?
+    - How can it be verified?
+    - Any trade-offs or limitations.
+  - Relevant tests for new or updated functionality.
+  - Updated documentation if your changes affect public APIs, behavior, or usage.
+- Keep your changes focused and well-scoped:
+  - Break down large pull requests into smaller, manageable parts.
+- Follow the [commit message guidelines](#commit-types).
+
+### Review and Merge Process
+- Once submitted, your pull request will be reviewed by a maintainer
+- Ensure all CI checks pass before requesting a review.
+- Discuss any feedback in the pull request comments and make necessary adjustments.
+
 ## Commit Types
 
 We follow the [Conventional Commits](https://www.conventionalcommits.org) standard to ensure consistency in commit messages. Below is a list of commit types and their purposes:
