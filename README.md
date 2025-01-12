@@ -125,8 +125,8 @@ const SomeEnum = EnumFactory.create('some-enum', { Foo: 'bar', Num: 12 } as cons
 
 console.log(SomeEnum.Foo) // => Enum { [Symbol(some-enum)]: 'some-enum' }
 console.log(SomeEnum.Foo.valueOf()) // => 'bar'
-console.log(SomeEnum.Foo.valueOf()) // => 12
-console.log(SomeEnum.Foo.toString()) // => '12'
+console.log(SomeEnum.Num.valueOf()) // => 12
+console.log(SomeEnum.Num.toString()) // => '12'
 ```
 
 ## Usage
@@ -319,7 +319,7 @@ type ColorsType = EnumType<typeof Colors>; // Colors.RED | Colors.GREEN | Colors
 
 #### EnumKeysType<TClassEnum>
 
-Extracts the type of all enum values.
+Extracts a union type of valid keys for index signatures, including both enum member references and their values.
 
 **Example:**
 
