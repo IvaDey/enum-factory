@@ -11,4 +11,5 @@ const distPath = path.resolve(process.cwd(), 'dist');
 if (fs.existsSync(distPath)) child_process.execSync('rm -r dist');
 
 child_process.execSync('tsc --project tsconfig.build.json');
+child_process.execSync('cp README.md ./dist');
 fs.writeFileSync(path.resolve(distPath, 'package.json'), JSON.stringify(pkg, null, 2));
