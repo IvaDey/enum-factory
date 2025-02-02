@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
-    "removeComments": true
+    "removeComments": true,
+    "allowImportingTsExtensions": false
   },
   "include": [
     "src/index.mts"

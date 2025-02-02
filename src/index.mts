@@ -9,6 +9,8 @@ export default class EnumFactory {
   >(name: TEnumName, definition: TDefinition): ClassEnum<TDefinition, TKeys, TEnumName> {
     if (this.usedNames.includes(name)) throw new Error(`An enum with the name "${name}" has already been created.`);
 
+    if ('name' in definition) throw new Error('Property "name" conflicts with built-in property of ClassEnum');
+
     const enumSymbol = Symbol(name);
     let inited = false;
     const values = new Map();
@@ -58,6 +60,12 @@ export default class EnumFactory {
       readonly [enumSymbol]: TName = name as never;
     }
 
+    Object.defineProperty(Enum, 'name', {
+      get(): string {
+        return name
+      }
+    })
+
     Object.entries(definition).forEach(([key, value]) => {
       if (values.has(value)) throw new Error(`Enum values must be uniq. Found duplicated value "${value}" in enum "${name}" for key "${key}"`);
 
@@ -89,6 +97,7 @@ type ClassEnumMethods<
   TKeys extends keyof TDefinition,
   TEnumName extends string
 > = {
+  name: TEnumName;
   fromValue<TValueType extends TDefinition[TKeys]>(value: TValueType): ClassEnumMember<TValueType, TEnumName>;
   values(): Array<ClassEnumMember<TDefinition[TKeys], TEnumName>>;
   keys(): TKeys[];

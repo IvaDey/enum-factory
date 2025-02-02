@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable eqeqeq */
 import { describe, expect, it } from 'vitest';
-import EnumFactory, { EnumKeysType } from './index.mjs';
+import EnumFactory, { EnumKeysType } from './index.mts';
 
 const Enum1 = EnumFactory.create('enum1', {
   Foo: 'bar',
@@ -25,6 +25,12 @@ describe('Functionality', () => {
     expect(Enum1.Foo == 'bar').toBe(true);
     expect(Enum1.Foo === Enum1.fromValue('bar')).toBe(true);
     expect(Enum3.Number.valueOf() === 12).toBe(true);
+  });
+
+  it('should expose enum name', () => {
+    expect(Enum1.name).toStrictEqual('enum1');
+    expect(Enum2.name).toStrictEqual('enum2');
+    expect(Enum3.name).toStrictEqual('child-enum');
   });
 
   it('should return primitive value from valueOf()', () => {
@@ -107,5 +113,13 @@ describe('Functionality', () => {
       bar: 'foo',
       12: 'number',
     });
+  });
+
+  it('should throw an error if "name" key was used for enum defining enum member', () => {
+    expect(() => {
+      EnumFactory.create('SomeEnum', {
+        name: 'Forbidden enum member',
+      });
+    }).toThrowError('Property "name" conflicts with built-in property of ClassEnum');
   });
 });

@@ -4,7 +4,7 @@ import {
   expectTypeOf,
   it,
 } from 'vitest';
-import EnumFactory, { EnumKeysType, EnumType } from './index.mjs';
+import EnumFactory, { EnumKeysType, EnumType } from './index.mts';
 
 const StringEnum = EnumFactory.create('string-enum', { Foo: 'bar' } as const);
 type StringEnum = EnumType<typeof StringEnum>;
@@ -24,6 +24,7 @@ describe('Type definitions', () => {
     expectTypeOf(EnumFactory.create).toBeCallableWith('', {});
 
     expectTypeOf(StringEnum).toHaveProperty('cloneAndExtend');
+    expectTypeOf(StringEnum).toHaveProperty('name');
     expectTypeOf(StringEnum.cloneAndExtend).toBeCallableWith('', {});
   });
 
