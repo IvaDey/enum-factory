@@ -1,0 +1,17 @@
+{
+  "version": "1.0.2",
+  "date": "2025-02-02T14:09:55.215Z",
+  "commits": [
+    {
+      "hash": "9c2b769ebb840669341181af10594b8069bccaa0",
+      "abbreviatedHash": "9c2b769",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-02-02T14:09:51.000Z",
+      "title": "fix extension",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "fix"
+    }
+  ]
+}

@@ -1,3 +1,11 @@
+## v1.0.2 - February 2, 2025
+
+### Fixes
+
+- fix extension **[(9c2b769)](9c2b769ebb840669341181af10594b8069bccaa0)**
+
+<hr />
+
 ## v1.0.1 - February 2, 2025<br />![breaking-change](https://img.shields.io/badge/%E2%9A%A1%EF%B8%8F%20breaking--changes-red)
 
 ### ci
