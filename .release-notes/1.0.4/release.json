@@ -1,0 +1,17 @@
+{
+  "version": "1.0.4",
+  "date": "2025-02-02T18:09:12.959Z",
+  "commits": [
+    {
+      "hash": "f92cd8a392fc8fccf5666011784a7019ee885e8d",
+      "abbreviatedHash": "f92cd8a",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-02-02T18:08:28.000Z",
+      "title": "expose enum name by overriding internal Enum class name via defining getter",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "feat"
+    }
+  ]
+}

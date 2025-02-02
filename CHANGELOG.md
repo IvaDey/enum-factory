@@ -1,3 +1,11 @@
+## v1.0.4 - February 2, 2025
+
+### Features
+
+- expose enum name by overriding internal Enum class name via defining getter **[(f92cd8a)](f92cd8a392fc8fccf5666011784a7019ee885e8d)**
+
+<hr />
+
 ## v1.0.3 - February 2, 2025
 
 ### Fixes
