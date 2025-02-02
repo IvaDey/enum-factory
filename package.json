@@ -24,7 +24,7 @@
     "typed-enum",
     "enum-factory"
   ],
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "build": "node scripts/build.mjs",
     "check": "tsc --noEmit && eslint --ext .ts,.tsx .",
