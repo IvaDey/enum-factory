@@ -48,6 +48,7 @@ export default class EnumFactory {
         TNewEnumName extends string,
         TExtraKeys extends keyof TExtraDefinition = keyof TExtraDefinition
       >(childName: string, childDefinition: EnumDefinition) {
+        // todo: add option to throw error on duplicated key and/or value, or similar key with different values
         return EnumFactory.create(
           childName,
           { ...Object.fromEntries(this.entries()), ...childDefinition } as EnumDefinition,
