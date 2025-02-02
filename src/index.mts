@@ -16,16 +16,16 @@ export default class EnumFactory {
     const values = new Map();
 
     class Enum <TValue, TName extends string> {
-      readonly #value: TValue;
+      private readonly _value: TValue;
 
       constructor(value: TValue) {
         if (inited) throw new Error(`Creating class enum instances is not permitted. If you want to get an enum member by value, you should use the "fromValue" method.`);
-        this.#value = value;
+        this._value = value;
       }
 
-      valueOf(): TValue { return this.#value; }
+      valueOf(): TValue { return this._value; }
 
-      toString() { return String(this.#value); }
+      toString() { return String(this._value); }
 
       toJSON() { return this.valueOf(); }
 
@@ -51,6 +51,7 @@ export default class EnumFactory {
         TExtraKeys extends keyof TExtraDefinition = keyof TExtraDefinition
       >(childName: string, childDefinition: EnumDefinition) {
         // todo: add option to throw error on duplicated key and/or value, or similar key with different values
+        //  or maybe just log warning
         return EnumFactory.create(
           childName,
           { ...Object.fromEntries(this.entries()), ...childDefinition } as EnumDefinition,
