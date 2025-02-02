@@ -1,0 +1,204 @@
+{
+  "version": "1.0.1",
+  "date": "2025-02-02T13:57:14.446Z",
+  "commits": [
+    {
+      "hash": "d02dd10328a23af6c8801ab17aac87dd276ba01d",
+      "abbreviatedHash": "d02dd10",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-02-02T13:52:07.000Z",
+      "title": "set package type to \"module\"",
+      "body": "",
+      "isBreakingChange": true,
+      "type": "feat"
+    },
+    {
+      "hash": "da970056e69138d126ae300cf0bea14223008ae5",
+      "abbreviatedHash": "da97005",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-14T16:10:42.000Z",
+      "title": "copy readme.md to dist after building",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "ops"
+    },
+    {
+      "hash": "15ce3a16126062dfdd1ace61024e5920fefff718",
+      "abbreviatedHash": "15ce3a1",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-12T13:17:25.000Z",
+      "title": "add links to repository in package.json",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "chore"
+    },
+    {
+      "hash": "53d567af8f14011d6929fc7f83da6142cb1e0838",
+      "abbreviatedHash": "53d567a",
+      "authorName": "Valentin",
+      "authorEmail": "53537879+IvaDey@users.noreply.github.com",
+      "date": "2025-01-12T13:14:41.000Z",
+      "title": "",
+      "body": "Docs [skip ci]",
+      "isBreakingChange": false,
+      "type": "Merge pull request #2 from IvaDey/docs"
+    },
+    {
+      "hash": "7b54cbf58f36240de2efa5c7700d0cf8cf79801f",
+      "abbreviatedHash": "7b54cbf",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-12T13:11:49.000Z",
+      "title": "fix example after review",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "docs"
+    },
+    {
+      "hash": "91a2b9ec232c125b054167dc9372f332563718cf",
+      "abbreviatedHash": "91a2b9e",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-12T12:48:40.000Z",
+      "title": "readme and CONTRIBUTING.md",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "docs"
+    },
+    {
+      "hash": "63efb9218694a0bc8caa70ebfeab056b540584f0",
+      "abbreviatedHash": "63efb92",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T23:24:58.000Z",
+      "title": "docs",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "wip"
+    },
+    {
+      "hash": "562067c09f7ac1cf12f2c9297be1da984575ed35",
+      "abbreviatedHash": "562067c",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T22:58:31.000Z",
+      "title": "fix types",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "fix"
+    },
+    {
+      "hash": "13383c6a09d33ae1f2da7b8d56270c3dce411eb7",
+      "abbreviatedHash": "13383c6",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T22:54:21.000Z",
+      "title": "add test for case with used enum values as object keys",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "test"
+    },
+    {
+      "hash": "822ed6bd69385fb5f5d53bbd5f88f48ab0c23277",
+      "abbreviatedHash": "822ed6b",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T21:34:34.000Z",
+      "title": "add test for new utility type EnumKeysType",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "test"
+    },
+    {
+      "hash": "2c1102aabe06653e0a75894f1578558b8debd569",
+      "abbreviatedHash": "2c1102a",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T21:31:33.000Z",
+      "title": "add utility type to use created enums as index signature",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "feat"
+    },
+    {
+      "hash": "455a4f46e96faaa04c83a1cb4862fe7922e5b77a",
+      "abbreviatedHash": "455a4f4",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T20:08:12.000Z",
+      "title": "add test workflow status badge [skip ci]",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "docs"
+    },
+    {
+      "hash": "f198ace1885e7adb8cc101ef0ba0e975fa5b89c8",
+      "abbreviatedHash": "f198ace",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T20:04:56.000Z",
+      "title": "add link to issues page for issues badge [skip ci]",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "docs"
+    },
+    {
+      "hash": "d58f753d56a5206c03e28512a8a1c9e7fc33778a",
+      "abbreviatedHash": "d58f753",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T19:57:33.000Z",
+      "title": "added coverage badge in README.md",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "docs"
+    },
+    {
+      "hash": "938c27b08998fcf21b2dde8ce2552bd9c7feb191",
+      "abbreviatedHash": "938c27b",
+      "authorName": "Valentin",
+      "authorEmail": "53537879+IvaDey@users.noreply.github.com",
+      "date": "2025-01-11T19:55:12.000Z",
+      "title": "",
+      "body": "ci: init CI",
+      "isBreakingChange": false,
+      "type": "Merge pull request #1 from IvaDey/ci"
+    },
+    {
+      "hash": "daa006d79978e6731358c62b5b32ec31f718550f",
+      "abbreviatedHash": "daa006d",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T19:51:09.000Z",
+      "title": "update GitHub actions \"checkout\" and \"setup-node\" to the lates",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "ci"
+    },
+    {
+      "hash": "8fe67e5894c6b6e9897fb4a77327d5276f76483c",
+      "abbreviatedHash": "8fe67e5",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T19:50:22.000Z",
+      "title": "include commitlint config to tsconfig",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "fix"
+    },
+    {
+      "hash": "01ca7f555132cdf9cb6f35e70a4e94050fcaf5b1",
+      "abbreviatedHash": "01ca7f5",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-01-11T19:43:48.000Z",
+      "title": "init CI",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "ci"
+    }
+  ]
+}
