@@ -4,7 +4,7 @@ import {
   expectTypeOf,
   it,
 } from 'vitest';
-import EnumFactory, { EnumKeysType, EnumType } from './index';
+import EnumFactory, { EnumKeysType, EnumType } from './index.mjs';
 
 const StringEnum = EnumFactory.create('string-enum', { Foo: 'bar' } as const);
 type StringEnum = EnumType<typeof StringEnum>;

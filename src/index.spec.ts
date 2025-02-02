@@ -2,7 +2,7 @@
 // @ts-nocheck
 /* eslint-disable eqeqeq */
 import { describe, expect, it } from 'vitest';
-import EnumFactory, { EnumKeysType } from './index';
+import EnumFactory, { EnumKeysType } from './index.mjs';
 
 const Enum1 = EnumFactory.create('enum1', {
   Foo: 'bar',

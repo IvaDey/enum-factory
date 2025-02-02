@@ -9,7 +9,7 @@
     "outDir": "./dist",
     "declaration": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "noEmit": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

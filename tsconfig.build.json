@@ -4,5 +4,7 @@
     "noEmit": false,
     "removeComments": true
   },
-  "include": ["src/index.ts"]
+  "include": [
+    "src/index.mts"
+  ]
 }
