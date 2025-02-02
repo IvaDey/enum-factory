@@ -1,3 +1,12 @@
+## v1.0.5 - February 2, 2025
+
+### Fixes
+
+- make enum internal prop 'value' private only via typescript access modifiers **[(19f9ef5)](19f9ef56137b91483e9fd65f594972fd45a596ef)**<br />
+> Making it real private with # cause error in some cases (deep cloning and using in eval for example)
+
+<hr />
+
 ## v1.0.4 - February 2, 2025
 
 ### Features

@@ -1,0 +1,17 @@
+{
+  "version": "1.0.5",
+  "date": "2025-02-02T21:09:19.994Z",
+  "commits": [
+    {
+      "hash": "19f9ef56137b91483e9fd65f594972fd45a596ef",
+      "abbreviatedHash": "19f9ef5",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-02-02T21:08:59.000Z",
+      "title": "make enum internal prop 'value' private only via typescript access modifiers",
+      "body": "Making it real private with # cause error in some cases (deep cloning and using in eval for example)",
+      "isBreakingChange": false,
+      "type": "fix"
+    }
+  ]
+}
