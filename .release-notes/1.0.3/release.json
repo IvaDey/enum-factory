@@ -1,0 +1,17 @@
+{
+  "version": "1.0.3",
+  "date": "2025-02-02T14:12:58.170Z",
+  "commits": [
+    {
+      "hash": "f8b919d78c461f6f5a68f146fcb5de1038d7dc89",
+      "abbreviatedHash": "f8b919d",
+      "authorName": "IvaDey",
+      "authorEmail": "vi@ivadey.com",
+      "date": "2025-02-02T14:12:50.000Z",
+      "title": "fix package.json",
+      "body": "",
+      "isBreakingChange": false,
+      "type": "fix"
+    }
+  ]
+}

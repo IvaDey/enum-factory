@@ -1,3 +1,11 @@
+## v1.0.3 - February 2, 2025
+
+### Fixes
+
+- fix package.json **[(f8b919d)](f8b919d78c461f6f5a68f146fcb5de1038d7dc89)**
+
+<hr />
+
 ## v1.0.2 - February 2, 2025
 
 ### Fixes
