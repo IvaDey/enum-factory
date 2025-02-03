@@ -13,7 +13,7 @@ const Enum2 = EnumFactory.create('enum2', {
   Foo: 'bar',
 } as const);
 
-const Enum3 = Enum2.cloneAndExtend('child-enum', {
+const ExtendedEnum2 = Enum2.cloneAndExtend('child-enum', {
   Number: 12,
 } as const);
 
@@ -24,13 +24,13 @@ describe('Functionality', () => {
     expect(Enum1.Foo === 'bar').toBe(false);
     expect(Enum1.Foo == 'bar').toBe(true);
     expect(Enum1.Foo === Enum1.fromValue('bar')).toBe(true);
-    expect(Enum3.Number.valueOf() === 12).toBe(true);
+    expect(ExtendedEnum2.Number.valueOf() === 12).toBe(true);
   });
 
   it('should expose enum name', () => {
     expect(Enum1.name).toStrictEqual('enum1');
     expect(Enum2.name).toStrictEqual('enum2');
-    expect(Enum3.name).toStrictEqual('child-enum');
+    expect(ExtendedEnum2.name).toStrictEqual('child-enum');
   });
 
   it('should return primitive value from valueOf()', () => {
@@ -75,19 +75,28 @@ describe('Functionality', () => {
     expect(Object.values(Enum1)).toStrictEqual(Enum1.values());
     expect(Object.keys(Enum1)).toStrictEqual(Enum1.keys());
     expect(Object.entries(Enum1)).toStrictEqual(Enum1.entries());
+
+    expect(Object.values(ExtendedEnum2)).toStrictEqual(ExtendedEnum2.values());
+    expect(Object.keys(ExtendedEnum2)).toStrictEqual(ExtendedEnum2.keys());
+    expect(Object.entries(ExtendedEnum2)).toStrictEqual(ExtendedEnum2.entries());
   });
 
   it('should inherit parent values', () => {
-    expect(Enum3.Foo).toBeDefined();
-    expect(Enum3.Foo.valueOf() === 'bar').toBe(true);
+    expect(ExtendedEnum2.Foo).toBeDefined();
+    expect(ExtendedEnum2.Foo.valueOf() === 'bar').toBe(true);
 
-    expect(Enum3.fromValue('bar')).toBeDefined();
-    expect(Enum3.fromValue('bar')).toStrictEqual(Enum3.Foo);
+    expect(ExtendedEnum2.fromValue('bar')).toBeDefined();
+    expect(ExtendedEnum2.fromValue('bar')).toStrictEqual(ExtendedEnum2.Foo);
+
+    expect(ExtendedEnum2.keys()).toStrictEqual(['Foo', 'Number']);
+    expect(ExtendedEnum2.values()).toStrictEqual([Enum2.Foo, ExtendedEnum2.Number]);
+    expect(ExtendedEnum2.values()).toStrictEqual([ExtendedEnum2.Foo, ExtendedEnum2.Number]);
+    expect(ExtendedEnum2.entries()).toStrictEqual([['Foo', ExtendedEnum2.Foo], ['Number', ExtendedEnum2.Number]]);
   });
 
   it('should be equal with parent enum ', () => {
-    expect(Enum2.Foo === Enum3.Foo).toBe(true);
-    expect(Enum1.Number === Enum3.Number).toBe(false);
+    expect(Enum2.Foo === ExtendedEnum2.Foo).toBe(true);
+    expect(Enum1.Number === ExtendedEnum2.Number).toBe(false);
   });
 
   it('should be serializable', () => {
