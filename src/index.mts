@@ -42,7 +42,7 @@ export default class EnumFactory {
       }
 
       static entries(): Array<[TKeys, Enum<TDefinition[TKeys], TEnumName>]> {
-        return Object.entries(definition).map(([key, value]) => [key, values.get(value)]) as never[];
+        return Object.entries(definition).map(([key, value]) => [key, values.get(value.valueOf())]) as never[];
       }
 
       static cloneAndExtend<
