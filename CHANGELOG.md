@@ -1,3 +1,15 @@
+## v1.0.6 - February 3, 2025
+
+### Fixes
+
+- entries() in inherited enums missed parent values **[(670aed2)](670aed20d7e2deac353399f3d982f72d533d79ab)**
+
+### Tests
+
+- add test cases for inherited enums entries() **[(6a6b496)](6a6b4960e20a084e3236f354fbe253e97d4f9459)**
+
+<hr />
+
 ## v1.0.5 - February 2, 2025
 
 ### Fixes
