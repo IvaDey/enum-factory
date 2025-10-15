@@ -63,9 +63,9 @@ export default class EnumFactory {
 
     Object.defineProperty(Enum, 'name', {
       get(): string {
-        return name
-      }
-    })
+        return name;
+      },
+    });
 
     Object.entries(definition).forEach(([key, value]) => {
       if (values.has(value)) throw new Error(`Enum values must be uniq. Found duplicated value "${value}" in enum "${name}" for key "${key}"`);
@@ -87,13 +87,13 @@ export default class EnumFactory {
   // todo: helpers to determine if given value an enum or not and to extract enum and restore from value
 }
 
-type ClassEnum<
+export type ClassEnum<
   TDefinition extends EnumDefinition,
   TKeys extends keyof TDefinition,
   TEnumName extends string
 > = EnumMembers<TDefinition, TKeys, TEnumName> & ClassEnumMethods<TDefinition, TKeys, TEnumName>
 
-type ClassEnumMethods<
+export type ClassEnumMethods<
   TDefinition extends EnumDefinition,
   TKeys extends keyof TDefinition,
   TEnumName extends string
@@ -113,11 +113,15 @@ type ClassEnumMethods<
   ): ClassEnum<TExtraDefinition & TDefinition, TExtraKeys | TKeys, TNewEnumName | TEnumName>;
 }
 
-type EnumMembers<TDefinition extends EnumDefinition, TKeys extends keyof TDefinition, TEnumName extends string> = {
+export type EnumMembers<
+  TDefinition extends EnumDefinition,
+  TKeys extends keyof TDefinition,
+  TEnumName extends string
+> = {
   [key in TKeys]: ClassEnumMember<TDefinition[key], TEnumName>;
 }
 
-interface ClassEnumMember<TValueType, TEnumName> {
+export interface ClassEnumMember<TValueType, TEnumName> {
   valueOf(): TValueType;
   toJSON(): TValueType;
   toString(): string;
