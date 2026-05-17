@@ -33,6 +33,17 @@ describe('Functionality', () => {
     expect(ExtendedEnum2.name).toStrictEqual('child-enum');
   });
 
+  it('should determine whether given value is enum created by EnumFactory', () => {
+    expect(EnumFactory.isEnum(Enum1)).toBe(true);
+    expect(EnumFactory.isEnum(Enum2)).toBe(true);
+    expect(EnumFactory.isEnum(ExtendedEnum2)).toBe(true);
+
+    expect(EnumFactory.isEnum(Enum1.Foo)).toBe(false);
+    expect(EnumFactory.isEnum({ Foo: 'bar' })).toBe(false);
+    expect(EnumFactory.isEnum(class SomeClass {})).toBe(false);
+    expect(EnumFactory.isEnum(123)).toBe(false);
+  });
+
   it('should return primitive value from valueOf()', () => {
     expect(Enum1.Foo.valueOf()).toStrictEqual('bar');
     expect(Enum1.Number.valueOf()).toStrictEqual(12);

@@ -44,7 +44,7 @@
     "jsx-a11y/anchor-is-valid": "warn",
     "jsx-a11y/label-has-associated-control": 0,
     "func-names": ["error", "as-needed"],
-    "no-underscore-dangle": "error",
+    "no-underscore-dangle": "off",
     "react/display-name": 0,
     "no-console": "warn",
     "no-unused-vars": "off",

@@ -21,7 +21,11 @@ type ChildEnum = EnumType<typeof ChildEnum>;
 describe('Type definitions', () => {
   it('should have correct type definitions for EnumFactory', () => {
     expectTypeOf(EnumFactory).toHaveProperty('create');
+    expectTypeOf(EnumFactory).toHaveProperty('isEnum');
     expectTypeOf(EnumFactory.create).toBeCallableWith('', {});
+    expectTypeOf(EnumFactory.isEnum).toBeCallableWith(StringEnum);
+    expectTypeOf(EnumFactory.isEnum).toBeCallableWith(StringEnum.Foo);
+    expectTypeOf(EnumFactory.isEnum).toBeCallableWith({});
 
     expectTypeOf(StringEnum).toHaveProperty('cloneAndExtend');
     expectTypeOf(StringEnum).toHaveProperty('name');

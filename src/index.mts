@@ -1,6 +1,12 @@
 // eslint-disable-next-line max-classes-per-file
 export default class EnumFactory {
   private static usedNames: string[] = [];
+  private static readonly enumMarker = Symbol('EnumFactory.enumMarker');
+
+  static isEnum(value: unknown): value is ClassEnum<EnumDefinition, string, string> {
+    if (typeof value !== 'function') return false;
+    return ((value as unknown) as Record<PropertyKey, unknown>)[this.enumMarker] === true;
+  }
 
   static create<
     TDefinition extends EnumDefinition,
@@ -67,6 +73,13 @@ export default class EnumFactory {
       },
     });
 
+    Object.defineProperty(Enum, this.enumMarker, {
+      value: true,
+      enumerable: false,
+      configurable: false,
+      writable: false,
+    });
+
     Object.entries(definition).forEach(([key, value]) => {
       if (values.has(value)) throw new Error(`Enum values must be uniq. Found duplicated value "${value}" in enum "${name}" for key "${key}"`);
 
@@ -83,8 +96,6 @@ export default class EnumFactory {
 
     return Enum as never;
   }
-
-  // todo: helpers to determine if given value an enum or not and to extract enum and restore from value
 }
 
 export type ClassEnum<
